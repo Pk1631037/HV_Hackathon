@@ -24,7 +24,7 @@ export default class Home extends Component {
         city_distance:'',
         competitors:'',
         category:'',
-        modal: true
+        // modal:false,
     }
     this.submit = this.submit.bind(this)
 }
@@ -86,7 +86,13 @@ this.setState({spinner:false,details:true});
 })
 }
   }
-  async handleSubmitval(){}
+//   async handlesub(){
+//     var cities=[];
+// for(var i=0; i<this.state.city_distance.length ;i++){
+// cities.push(this.state.city_distance[i].city);
+// }
+// console.log(cities);
+//   }
     render() {
         return (
           <div>
@@ -127,10 +133,10 @@ this.setState({spinner:false,details:true});
                     />
                   </Col>
                 </FormGroup> */}
-         <Button variant="primary" type="submit" onClick={this.handleSubmitval} active>
+         <Button variant="primary" type="submit" onClick={this.handlesub} active>
                         Age Analysis
                     </Button>
-                    <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                    {/* <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
           <ModalBody>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -139,11 +145,10 @@ this.setState({spinner:false,details:true});
             <Button color='primary' onClick={this.toggle}>Do Something</Button>{' '}
             <Button color='secondary' onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
-        </Modal>
+        </Modal> */}
               </Col>
               </Row>
-              {this.state.city_distance.length < 0 ?
-    <div>
+             
               <p style={{textAlign:'left',color:'#000',marginTop:'5%',fontSize:26,fontWeight:500}}>Nearby Cities</p>
               <Row>
               {this.state.city_distance.map(
@@ -159,11 +164,8 @@ this.setState({spinner:false,details:true});
                     ))}
       
     </Row>
-    </div>
-    :
-    null}
-    {this.state.competitors.length < 0 ?
-    <div>
+    
+  
     <p style={{textAlign:'left',color:'#000',marginTop:'5%',fontSize:26,fontWeight:500}}>Competitors</p>
               <Row>
               {this.state.competitors.map(
@@ -179,10 +181,7 @@ this.setState({spinner:false,details:true});
                     ))}
       
     </Row>
-    </div>
-    :
-    null
-                    }
+   
    
 </Container>
            :

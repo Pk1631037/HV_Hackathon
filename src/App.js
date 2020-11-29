@@ -94,7 +94,7 @@ export default class App extends Component {
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
-           
+          {/* <Route path="/" component={LoginForm} /> */}
             <Route path="/LoginForm" component={LoginForm} />
             <Route path="/RegistrationForm" component={RegistrationForm} />
             <Route path="/Home" component={Home} />
