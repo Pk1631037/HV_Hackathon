@@ -62,7 +62,7 @@ export default class Home extends Component {
     "category": category
   }
   
-    await axios.post('http://localhost:5555/analysis/latlong',body,
+    await axios.post('https://hyperverge-hack-prob1.herokuapp.com/analysis/latlong',body,
 {
   headers: {
     'x-access-token': key,
@@ -86,6 +86,7 @@ this.setState({spinner:false,details:true});
 })
 }
   }
+  async handleSubmitval(){}
     render() {
         return (
           <div>

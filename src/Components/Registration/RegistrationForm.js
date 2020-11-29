@@ -22,7 +22,7 @@ export default class RegistrationForm extends Component {
     }
     async componentDidMount(){
         this.setState({spinner:true});
-        await axios.get('http://localhost:5555/start/branches').then(response =>{
+        await axios.get('https://hyperverge-hack-prob1.herokuapp.com/start/branches').then(response =>{
             const json = response.data.data;
   
     // console.log(json)
@@ -31,7 +31,7 @@ export default class RegistrationForm extends Component {
                       }).catch(err =>{
                         console.log(err);
                       });
-                      await axios.get(' http://localhost:5555/start/categories').then(response =>{
+                      await axios.get(' https://hyperverge-hack-prob1.herokuapp.com/start/categories').then(response =>{
                         const json = response.data.data;
               
                 // console.log(json)
@@ -89,7 +89,7 @@ export default class RegistrationForm extends Component {
    console.log(this.state.client_org_password,this.state.client_org_phone,cleint_org_category,client_main_branch);
 this.setState({spinner:true});
 //    this.props.history.push('/LoginForm');
-  await axios.post('http://localhost:5555/auth/register', {
+  await axios.post('https://hyperverge-hack-prob1.herokuapp.com/auth/register', {
     "client_org_name":this.state.client_org_name,
     "client_org_email":this.state.client_org_email,
     "client_org_password":this.state.client_org_password,
